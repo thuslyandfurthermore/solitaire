@@ -96,9 +96,9 @@ def updateBoard():
   #display each field pile up to max height
   for i in range(height):
     print(f'{c(field[0],i):4}{c(field[1],i):4}{c(field[2],i):4}{c(field[3],i):4}{c(field[4],i):4}{c(field[5],i):4}{c(field[6],i):4}')
-  
-  print(f'\n\n{wins}/{losses} - {(wins / (wins + losses)) * 100:4f}%')
 
+  print(f'\n\n{wins}/{losses} - {((wins / (wins + losses))) if wins + losses > 0 else 0:.2%}')
+    
 def move(pile, length, dest, reverse = False):
   if reverse == True:
     for i in range(length):
